@@ -7,16 +7,16 @@ spring:
   threads:
     virtual:
       enabled: ${ENABLE_VIRTUAL_THREAD:true}
-    datasource:
-      driver-class-name: org.postgresql.Driver
-      url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:mydatabase}
-      username: ${POSTGRES_USERNAME:myuser}
-      password: ${POSTGRES_PASSWORD:secret}
-      hikari:
-        auto-commit: false
-    jpa:
-      open-in-view: false
-      hibernate:
-        naming:
-          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:mydatabase}
+    username: ${POSTGRES_USERNAME:myuser}
+    password: ${POSTGRES_PASSWORD:secret}
+    hikari:
+      auto-commit: false
+  jpa:
+    open-in-view: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
