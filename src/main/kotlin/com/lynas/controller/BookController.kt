@@ -11,7 +11,7 @@ import java.util.*
 @RequestMapping("/api/v1/books")
 class BookController(val bookService: BookService) {
 
-    @GetMapping("/name")
+    @GetMapping("/ct/name")
     fun ctName() = "BookController"
 
     @GetMapping("/")
