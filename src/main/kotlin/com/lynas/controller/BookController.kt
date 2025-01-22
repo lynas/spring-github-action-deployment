@@ -11,6 +11,9 @@ import java.util.*
 @RequestMapping("/api/v1/books")
 class BookController(val bookService: BookService) {
 
+    @GetMapping("/name")
+    fun ctName() = "BookController"
+
     @GetMapping("/")
     fun getAllBooks(): List<Book> = bookService.findAll()
 
