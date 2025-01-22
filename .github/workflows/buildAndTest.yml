@@ -24,15 +24,13 @@ jobs:
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
         run: |
-          echo "Logging in to Render CLI..."
-          curl -fsSL https://cli.render.com/install.sh | bash
-          render login --api-key $RENDER_API_KEY
-
+          curl -L https://github.com/render-oss/cli/releases/download/v1.1.0/cli_1.1.0_linux_amd64.zip -o render.zip
+          unzip render.zip
+          sudo mv cli_v1.1.0 /usr/local/bin/render
       - name: Deploy to Render Web Service
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
         run: |
-          echo "Deploying Docker image to Render..."
           render services update cu7d53tsvqrc7397u770 \
             --env docker \
             --docker-image lynas/publish-test:latest
