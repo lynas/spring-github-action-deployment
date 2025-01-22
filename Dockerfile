@@ -1,2 +1,2 @@
-FROM lynas/publish-test:tagname
+FROM lynas/publish-test:latest
 EXPOSE 8080
